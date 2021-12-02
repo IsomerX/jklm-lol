@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState } from "react";
+import { Route, Routes } from "react-router";
+import Home from "./components/Home";
+import Game from "./components/Game";
+import FourOhFour from "./components/FourOhFour";
+import firebase from "./fire/firebase";
+import { useNavigate } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const db = firebase.database();
+
+const App = () => {
+    const inputRef = useRef();
+    const userRef = useRef();
+    const navigate = useNavigate();
+
+    const newRoomHandler = () => {
+        const gamesRef = db.ref("games");
+        const newGame = gamesRef.push();
+        newGame.set({
+            code: inputRef.current.value,
+            users: [userRef.current.value],
+        });
+        console.log(newGame.key);
+        // replace the url with the new game code in react router
+        navigate(`/${userRef.current.value}/${newGame.key}`, {replace: false});
+    };
+
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/:user/:code" element={<Game/>} />
+                <Route path="/*" element={<FourOhFour />} />
+            </Routes>
+            <input ref={userRef} placeholder="username" required/>
+            <input ref={inputRef} placeholder="enter room name" required/>
+            <button onClick={newRoomHandler}>Make a new room</button>
+        </div>
+    );
+};
 
 export default App;
