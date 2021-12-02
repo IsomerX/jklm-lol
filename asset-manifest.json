@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/jklm-lol/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/jklm-lol/static/js/main.ac576d8c.chunk.js",
+    "main.js.map": "/jklm-lol/static/js/main.ac576d8c.chunk.js.map",
+    "runtime-main.js": "/jklm-lol/static/js/runtime-main.15b4bacf.js",
+    "runtime-main.js.map": "/jklm-lol/static/js/runtime-main.15b4bacf.js.map",
+    "static/js/2.9f4ab7af.chunk.js": "/jklm-lol/static/js/2.9f4ab7af.chunk.js",
+    "static/js/2.9f4ab7af.chunk.js.map": "/jklm-lol/static/js/2.9f4ab7af.chunk.js.map",
+    "index.html": "/jklm-lol/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/jklm-lol/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.9f4ab7af.chunk.js.LICENSE.txt": "/jklm-lol/static/js/2.9f4ab7af.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.15b4bacf.js",
+    "static/js/2.9f4ab7af.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ac576d8c.chunk.js"
+  ]
+}
