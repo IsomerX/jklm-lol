@@ -22,14 +22,14 @@ const App = () => {
         });
         console.log(newGame.key);
         // replace the url with the new game code in react router
-        navigate(`/${userRef.current.value}/${newGame.key}`, {replace: false});
+        navigate(`/jklm-lol/${userRef.current.value}/${newGame.key}`, {replace: false});
     };
 
     return (
         <div>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/:user/:code" element={<Game/>} />
+                <Route path="/jklm-lol" element={<Home />} />
+                <Route path="/jklm-lol/:user/:code" element={<Game/>} />
                 <Route path="/*" element={<FourOhFour />} />
             </Routes>
             <input ref={userRef} placeholder="username" required/>
